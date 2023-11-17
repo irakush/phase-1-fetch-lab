@@ -4,9 +4,9 @@ function fetchBooks() {
   .then((resp) => resp.json())
   .then((json) => {
     renderBooks(json)
-    fifthElement(json)
+    console.log(fifthElement(json))
     console.log(characterInSeries(json, 1031))
-    totalNumberOfPages(json)
+    console.log(totalNumberOfPages(json))
   })
 }
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fifthElement(books) {
-  console.log(books[4].name)
+  return books[4].name
 }
 
 function characterInSeries(books, numOfCharacter){
@@ -50,5 +50,5 @@ function totalNumberOfPages(books){
     totalNumberOfPages += book.numberOfPages
   })
 
-  console.log(totalNumberOfPages)
+  return totalNumberOfPages
 }
